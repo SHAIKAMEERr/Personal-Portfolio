@@ -1,230 +1,252 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaik Ameerjan | Java Backend Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SHAIK AMEERJAN | Java Backend Developer</title>
+    <meta name="description" content="SHAIK AMEERJAN - Java Backend Developer specializing in Spring Boot, AWS and Microservices">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f8fafc',
+                        secondary: '#f1f5f9',
+                        accent: '#3b82f6',
+                        accent2: '#10b981',
+                        accent3: '#6366f1',
+                        textPrimary: '#1e293b',
+                        textSecondary: '#334155',
+                        textMuted: '#64748b',
+                        border: '#cbd5e1'
+                    },
+                    fontFamily: {
+                        mono: ['Fira Code', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         :root {
-            --primary: #3b82f6;
-            --secondary: #0f172a;
-            --accent: #38bdf8;
-            --dark: #0f172a;
-            --darker: #020617;
-            --code-bg: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --highlight: #4f46e5;
+            --primary: #f8fafc;
+            --secondary: #f1f5f9;
+            --accent: #3b82f6;
+            --accent2: #10b981;
+            --accent3: #6366f1;
+            --text-primary: #1e293b;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --border: #cbd5e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
             color: var(--text-primary);
+            line-height: 1.6;
         }
         
-        code, pre, .font-mono {
+        h1, h2, h3, h4, h5, h6, .mono {
             font-family: 'Fira Code', monospace;
         }
         
-        .bg-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
         }
         
-        .terminal {
-            background-color: var(--code-bg);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            color: #e2e8f0;
-            font-family: 'Fira Code', monospace;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-            border: 1px solid #334155;
+        .section-title::before {
+            content: "//";
+            color: var(--accent);
+            margin-right: 0.5rem;
         }
         
-        .terminal-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
         }
         
-        .terminal-button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 6px;
-        }
-        
-        .terminal-red { background-color: #ef4444; }
-        .terminal-yellow { background-color: #eab308; }
-        .terminal-green { background-color: #22c55e; }
-        
-        .terminal-prompt {
-            color: #38bdf8;
-        }
-        
-        .terminal-command {
-            color: #e2e8f0;
-        }
-        
-        .terminal-output {
-            color: #94a3b8;
-            margin-top: 0.5rem;
-            line-height: 1.5;
-        }
-        
-        .code-block {
-            background-color: var(--code-bg);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            color: #e2e8f0;
-            font-family: 'Fira Code', monospace;
-            overflow-x: auto;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-            border: 1px solid #334155;
-        }
-        
-        .code-comment {
-            color: #64748b;
-        }
-        
-        .code-keyword {
-            color: #c084fc;
-        }
-        
-        .code-function {
-            color: #38bdf8;
-        }
-        
-        .code-string {
-            color: #4ade80;
-        }
-        
-        .code-number {
-            color: #fb923c;
-        }
-        
-        .project-card {
+        .card {
+            background-color: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             transition: all 0.3s ease;
-            border: 1px solid #334155;
-            background-color: #1e293b;
         }
         
-        .project-card:hover {
+        .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             border-color: var(--accent);
         }
         
-        .skill-pill {
-            transition: all 0.2s ease;
-            border: 1px solid #334155;
-            background-color: #1e293b;
+        .skill-tag {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            padding: 0.25rem 0.75rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
         }
         
-        .skill-pill:hover {
+        .skill-tag:hover {
+            background-color: rgba(59, 130, 246, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            background-color: var(--primary);
-            color: white;
         }
         
         .nav-link {
             position: relative;
-            padding: 0.5rem 0;
-            margin: 0 1rem;
-            font-weight: 500;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
         }
         
         .nav-link::after {
-            content: '';
+            content: "";
             position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
+            width: 0;
+            height: 2px;
             background-color: var(--accent);
             transition: width 0.3s ease;
-            border-radius: 3px;
         }
         
         .nav-link:hover::after {
             width: 100%;
         }
         
-        .nav-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        .nav-link.active::after {
+            width: 100%;
         }
         
-        .section-fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .section-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .timeline-item {
-            position: relative;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 100%;
-            background-color: #334155;
-            left: 24px;
-            top: 0;
-        }
-        
-        .timeline-item:last-child::before {
-            height: 50%;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            left: 17px;
-            top: 24px;
-            z-index: 1;
-        }
-        
-        .database-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
+        .btn {
+            font-family: 'Fira Code', monospace;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
         }
         
-        .tech-icon {
-            transition: all 0.3s ease;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
         }
         
-        .tech-icon:hover {
-            transform: translateY(-5px);
+        .btn:hover::before {
+            left: 100%;
         }
         
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2563eb;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+        
+        .btn-secondary {
+            background-color: var(--accent2);
+            color: white;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #059669;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+        }
+        
+        .btn-tertiary {
+            background-color: var(--accent3);
+            color: white;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-tertiary:hover {
+            background-color: #4f46e5;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+        
+        /* Particles Animation */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        /* Typing Animation */
         .typing-animation {
             overflow: hidden;
             border-right: 2px solid var(--accent);
             white-space: nowrap;
             margin: 0 auto;
-            animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
         
         @keyframes typing {
@@ -237,294 +259,1001 @@
             50% { border-color: var(--accent) }
         }
         
-        .custom-btn {
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(59, 130, 246, 0.5);
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
         
-        .custom-btn:before {
+        .loader-text {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent);
+            margin-top: 1rem;
+        }
+        
+        .loader-bar {
+            width: 200px;
+            height: 6px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+        
+        .loader-progress {
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100%;
+            background-color: var(--secondary);
+            z-index: 999;
+            padding: 2rem;
+            transition: right 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+        
+        /* Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-family: 'Fira Code', monospace;
+        }
+        
+        /* Terminal Effect */
+        .terminal {
+            background-color: #1e293b;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Fira Code', monospace;
+            position: relative;
+            color: #f8fafc;
+        }
+        
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .terminal-dot-red {
+            background-color: #ff5f56;
+        }
+        
+        .terminal-dot-yellow {
+            background-color: #ffbd2e;
+        }
+        
+        .terminal-dot-green {
+            background-color: #27c93f;
+        }
+        
+        .terminal-title {
+            margin-left: 1rem;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        
+        .terminal-line {
+            display: flex;
+            margin-bottom: 0.5rem;
+        }
+        
+        .terminal-prompt {
+            color: var(--accent2);
+            margin-right: 0.5rem;
+        }
+        
+        .terminal-command {
+            color: #f8fafc;
+        }
+        
+        .terminal-output {
+            color: #cbd5e1;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--border);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--primary);
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--border);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--border);
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--border);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--border) transparent transparent;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--secondary);
+            position: relative;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid var(--border);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--border) transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+        /* Badge Animation */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badge::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: all 0.6s ease;
-            z-index: -1;
         }
         
-        .custom-btn:hover:before {
+        .badge:hover::before {
             left: 100%;
         }
         
-        .custom-btn:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
-            transform: translateY(-3px);
-            border-color: rgba(59, 130, 246, 1);
+        .badge:hover {
+            transform: translateY(-2px);
         }
         
-        .custom-btn:active {
-            transform: translateY(-1px);
+        .badge-primary {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
         }
         
-        .glow-effect {
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        .badge-secondary {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent2);
+            border: 1px solid var(--accent2);
         }
         
-        .card-gradient {
-            background: linear-gradient(145deg, #1e293b, #0f172a);
+        .badge-tertiary {
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--accent3);
+            border: 1px solid var(--accent3);
         }
         
-        .progress-bar {
+        /* Glow Effect */
+        .glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+        }
+        
+        .glow-green {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-green:hover {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+        }
+        
+        .glow-indigo {
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-indigo:hover {
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+        }
+        
+        /* Project Card */
+        .project-card {
             position: relative;
-            height: 8px;
-            border-radius: 4px;
-            background: #1e293b;
             overflow: hidden;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
         
-        .progress-fill {
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card-content {
+            background-color: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .project-card-content {
+            border-color: var(--accent);
+        }
+        
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 1rem;
+            border-radius: 50%;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .project-icon {
+            transform: scale(1.1);
+            background-color: rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Stats Counter */
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        /* Floating Icons Animation */
+        .floating-icons {
             position: absolute;
             top: 0;
             left: 0;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #3b82f6, #4f46e5);
-            border-radius: 4px;
-            transition: width 1s ease;
+            overflow: hidden;
+            z-index: 0;
         }
         
-        .progress-glow {
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        .floating-icon {
+            position: absolute;
+            display: block;
+            opacity: 0.2;
+            animation: float 15s linear infinite;
         }
         
-        .hero-content {
-            z-index: 10;
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .section-alt {
+            background-color: #f1f5f9;
+        }
+        
+        /* Resume Section Styles */
+        .resume-container {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            background-color: white;
+            height: 600px;
             position: relative;
         }
         
-        .code-container {
-            z-index: 5;
-            position: relative;
+        .resume-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 20px;
         }
         
-        .logo-text {
-            background: linear-gradient(90deg, #3b82f6, #38bdf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
+        .resume-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         
-        .nav-container {
-            margin-left: 3rem;
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
         }
     </style>
 </head>
-<body class="bg-slate-900">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-slate-900 shadow-lg z-50 border-b border-slate-800">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                    <h1 class="text-2xl font-bold font-mono">&lt;Shaik<span class="text-blue-400">Ameer</span>/&gt;</h1>
-            <div class="hidden md:flex nav-container">
-                <a href="#about" class="nav-link text-gray-300 transition">About</a>
-                <a href="#skills" class="nav-link text-gray-300 transition">Skills</a>
-                <a href="#projects" class="nav-link text-gray-300 transition">Projects</a>
-                <a href="#experience" class="nav-link text-gray-300 transition">Experience</a>
-                <a href="#education" class="nav-link text-gray-300 transition">Education</a>
-                <a href="#contact" class="nav-link text-gray-300 transition">Contact</a>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="terminal" style="width: 500px; max-width: 90%;">
+            <div class="terminal-header">
+                <div class="terminal-dot terminal-dot-red"></div>
+                <div class="terminal-dot terminal-dot-yellow"></div>
+                <div class="terminal-dot terminal-dot-green"></div>
+                <div class="terminal-title">ameerjan@portfolio:~</div>
             </div>
-            
-            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-slate-900 shadow-lg absolute w-full border-b border-slate-800">
-            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="#about" class="text-gray-300 hover:text-blue-500 transition py-2">About</a>
-                <a href="#skills" class="text-gray-300 hover:text-blue-500 transition py-2">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:text-blue-500 transition py-2">Projects</a>
-                <a href="#experience" class="text-gray-300 hover:text-blue-500 transition py-2">Experience</a>
-                <a href="#education" class="text-gray-300 hover:text-blue-500 transition py-2">Education</a>
-                <a href="#contact" class="text-gray-300 hover:text-blue-500 transition py-2">Contact</a>
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-command">cd /home/ameerjan/portfolio</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-command">npm start</span>
+                </div>
+                <div class="terminal-output">Initializing portfolio components...</div>
+                <div class="terminal-output">Loading dependencies...</div>
+                <div class="terminal-output">Compiling assets...</div>
+                <div class="terminal-output">Starting development server...</div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-command" id="loading-text">Loading portfolio...</span>
+                </div>
             </div>
         </div>
-    </nav>
+        <div class="loader-bar">
+            <div class="loader-progress" id="loader-progress"></div>
+        </div>
+    </div>
 
-    <!-- Hero Section -->
-    <header class="bg-gradient text-white min-h-screen flex items-center">
-        <div class="container mx-auto px-4 py-20 md:py-0">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-3/5 mb-10 md:mb-0 hero-content">
-                    <div class="mb-6">
-                        <div class="inline-block bg-blue-900 text-blue-200 px-3 py-1 rounded-md font-mono text-sm mb-4">
-                            Java Backend Developer
-                        </div>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                            Hello, I'm <span class="text-blue-400">AMEER</span>
-                        </h1>
-                        <h2 class="text-xl md:text-2xl mb-6 text-blue-200">Building robust server-side solutions</h2>
-                    </div>
-                    <div class="terminal mb-8">
-                        <div class="terminal-header">
-                            <div class="terminal-button terminal-red"></div>
-                            <div class="terminal-button terminal-yellow"></div>
-                            <div class="terminal-button terminal-green"></div>
-                        </div>
-                        <div>
-                            <span class="terminal-prompt">$ </span>
-                            <span class="terminal-command">java -version</span>
-                        </div>
-                        <div class="terminal-output">
-                            > Java developer with expertise in Spring Boot, Microservices, and REST APIs<br>
-                            > Passionate about building scalable and secure server architectures<br>
-                            > Experienced in event-driven systems and distributed computing
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="custom-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition flex items-center">
-                            <i class="fas fa-paper-plane mr-2"></i> Contact Me
-                        </a>
-                        <a href="#projects" class="custom-btn bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-md font-medium transition flex items-center">
-                            <i class="fas fa-code mr-2"></i> View Projects
-                        </a>
-                    </div>
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-opacity-90 backdrop-blur-md z-50" style="background-color: rgba(248, 250, 252, 0.8);">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="#home" class="text-xl font-bold">
+                    <span class="text-accent">&lt;</span>
+                    SHAIK<span class="text-accent2">AMEERJAN</span>
+                    <span class="text-accent">/&gt;</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="https://drive.google.com/file/d/19eDdYkxMqnjIzJxr0W520aABo70dhX_n/view?usp=sharing" target="_blank" class="btn btn-outline">Resume</a>
                 </div>
-                <div class="md:w-2/5 flex justify-center code-container">
-                    <div class="code-block w-full max-w-lg">
-                        <pre><span class="code-keyword">public class</span> <span class="code-function">Developer</span> {
-    <span class="code-keyword">private final</span> String <span class="code-string">name</span> = <span class="code-string">"Shaik Ameerjan"</span>;
-    <span class="code-keyword">private final</span> String <span class="code-string">role</span> = <span class="code-string">"Java Backend Developer"</span>;
-    <span class="code-keyword">private final</span> String[] <span class="code-string">skills</span> = {
-        <span class="code-string">"Java"</span>, 
-        <span class="code-string">"Spring Boot"</span>, 
-        <span class="code-string">"Microservices"</span>,
-        <span class="code-string">"REST APIs"</span>,
-        <span class="code-string">"AWS"</span>
-    };
-    
-    <span class="code-keyword">public</span> String <span class="code-function">getExperience</span>() {
-        <span class="code-keyword">return</span> <span class="code-string">"Building scalable applications"</span>;
-    }
-    
-    <span class="code-keyword">public</span> String <span class="code-function">sayHello</span>() {
-        <span class="code-keyword">return</span> <span class="code-string">"Welcome to my portfolio!"</span>;
-    }
-}</pre>
-                    </div>
-                </div>
-            </div>
+                
+                <button class="md:hidden text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
         </div>
     </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <a href="#home" class="text-xl font-bold">
+                <span class="text-accent">&lt;</span>
+                SHAIK<span class="text-accent2">AMEERJAN</span>
+                <span class="text-accent">/&gt;</span>
+            </a>
+            <button class="text-2xl" id="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-6">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="https://drive.google.com/file/d/19eDdYkxMqnjIzJxr0W520aABo70dhX_n/view?usp=sharing" target="_blank" class="btn btn-outline w-full">Resume</a>
+        </div>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-slate-900 section-fade">
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <div id="particles-js" class="absolute inset-0"></div>
+        <div class="floating-icons" id="floating-icons"></div>
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div data-aos="fade-right">
+                    <div class="mb-4">
+                        <span class="font-mono text-sm text-gray-500">// Hello World! I am</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        SHAIK <span class="text-accent">AMEERJAN</span>
+                    </h1>
+                    <div class="h-12">
+                        <h2 class="text-xl md:text-2xl font-medium text-gray-600 typing-animation">
+                            Java Backend Developer | Spring Boot | AWS | Microservices
+                        </h2>
+                    </div>
+                    <p class="text-lg md:text-xl mt-6 mb-8 text-gray-600">
+                        Turning logic into secure, scalable backend systems.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://drive.google.com/file/d/19eDdYkxMqnjIzJxr0W520aABo70dhX_n/view?usp=sharing" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-file-alt"></i> View Resume
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-briefcase"></i> Hire Me
+                        </a>
+                        <a href="#contact" class="btn btn-tertiary">
+                            <i class="fas fa-paper-plane"></i> Contact
+                        </a>
+                    </div>
+                    <div class="flex mt-8 space-x-4">
+                        <a href="https://www.linkedin.com/in/ameer-shaikk/" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/SHAIKAMEER/" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fas fa-code text-2xl"></i>
+                        </a>
+                        <a href="mailto:shaikameerjann@gmail.com" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center items-center" data-aos="fade-left">
+                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 section-alt">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-start gap-12">
-                <div class="md:w-1/3">
-                    <div class="sticky top-24">
-                        <h2 class="text-3xl font-bold mb-6 text-white">About Me</h2>
-                        <div class="h-1 w-20 bg-blue-600 mb-8"></div>
-                        <div class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
-                            <div class="p-1 bg-slate-700 flex space-x-1">
-                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            </div>
-                            <div class="p-4">
-                                <svg class="w-full h-64 text-slate-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex flex-wrap gap-4">
-                            <a href="https://linkedin.com/in/ameer-shaikk/" target="_blank" class="flex items-center text-blue-400 hover:text-blue-300 transition">
-                                <i class="fab fa-linkedin text-xl mr-2"></i> LinkedIn
-                            </a>
-                            <a href="https://github.com/SHAIKAMEERr" target="_blank" class="flex items-center text-blue-400 hover:text-blue-300 transition">
-                                <i class="fab fa-github text-xl mr-2"></i> GitHub
-                            </a>
-                            <a href="https://leetcode.com/SHAIKAMEER" target="_blank" class="flex items-center text-blue-400 hover:text-blue-300 transition">
-                                <i class="fas fa-code text-xl mr-2"></i> LeetCode
+            <h2 class="section-title text-3xl font-bold mb-12" data-aos="fade-right">My Resume</h2>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2" data-aos="fade-right">
+                    <div class="resume-container">
+                        <iframe class="resume-frame" src="https://drive.google.com/file/d/19eDdYkxMqnjIzJxr0W520aABo70dhX_n/preview" allow="autoplay"></iframe>
+                        <div class="resume-overlay">
+                            <a href="https://drive.google.com/file/d/19eDdYkxMqnjIzJxr0W520aABo70dhX_n/view?usp=sharing" target="_blank" class="btn btn-primary pulse-animation">
+                                <i class="fas fa-download mr-2"></i> Download Full Resume
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-2/3">
-                    <div class="bg-blue-900/30 border-l-4 border-blue-600 pl-4 py-2 mb-8">
-                        <p class="text-lg font-medium text-blue-200">Java Backend Developer with a passion for building scalable server architectures</p>
-                    </div>
-                    <p class="text-lg text-gray-300 mb-6">
-                        I am a motivated Java Developer with hands-on experience in Java, Spring Boot, Microservices, and REST APIs. My expertise lies in designing and implementing robust server-side applications that power modern web services and enterprise solutions.
-                    </p>
-                    <p class="text-lg text-gray-300 mb-6">
-                        My technical foundation includes extensive experience with event-driven architectures, distributed systems, and cloud deployment using AWS. I'm skilled in developing scalable, secure applications and collaborating in Agile environments to deliver high-quality solutions.
-                    </p>
-                    <p class="text-lg text-gray-300 mb-8">
-                        Beyond coding, I'm committed to continuous learning and staying updated with the latest backend technologies and best practices. I enjoy solving complex problems and collaborating with cross-functional teams to deliver exceptional software solutions.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 shadow-sm hover:shadow-md transition">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-blue-900/50 p-3 rounded-full mr-4">
-                                    <i class="fas fa-server text-blue-400"></i>
+                <div class="md:col-span-1" data-aos="fade-left">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6">Resume Highlights</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-accent text-xl mr-4">
+                                    <i class="fas fa-graduation-cap"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold text-white">Backend Focus</h3>
+                                <div>
+                                    <h4 class="font-bold">Education</h4>
+                                    <p class="text-gray-600">MCA from Madanapalle Institute of Technology & Science</p>
+                                </div>
                             </div>
-                            <p class="text-gray-300">
-                                Specialized in Java-based server-side architecture, API development, and database optimization for high-performance applications.
-                            </p>
+                            <div class="flex items-start">
+                                <div class="text-accent2 text-xl mr-4">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Experience</h4>
+                                    <p class="text-gray-600">Java Developer Intern at HulkHire Technologies</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-accent3 text-xl mr-4">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Skills</h4>
+                                    <p class="text-gray-600">Java, Spring Boot, AWS, Microservices, REST APIs</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-accent text-xl mr-4">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Certifications</h4>
+                                    <p class="text-gray-600">Kafka & Zookeeper, Java, Spring Boot</p>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 shadow-sm hover:shadow-md transition">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-blue-900/50 p-3 rounded-full mr-4">
-                                    <i class="fas fa-cloud text-blue-400"></i>
-                                </div>
-                                <h3 class="text-xl font-semibold text-white">Cloud & Microservices</h3>
-                            </div>
-                            <p class="text-gray-300">
-                                Experienced in designing microservices architectures and deploying applications on AWS cloud infrastructure.
-                            </p>
+                        <div class="mt-8">
+                            <a href="https://drive.google.com/file/d/19eDdYkxMqnjIzJxr0W520aABo70dhX_n/view?usp=sharing" target="_blank" class="btn btn-outline w-full">
+                                <i class="fas fa-external-link-alt mr-2"></i> Open in Google Drive
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="bg-slate-800 rounded-lg p-6 text-white border border-slate-700">
-                        <h3 class="text-xl font-semibold mb-4 flex items-center">
-                            <i class="fas fa-terminal mr-2 text-blue-400"></i> Quick Facts
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="flex items-start">
-                                <div class="text-blue-400 mr-3">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <p>Experience with PayPal payment integration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-12" data-aos="fade-right">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-1" data-aos="fade-right">
+                    <div class="flex justify-center">
+                        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_pwohahvd.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                    </div>
+                </div>
+                <div class="md:col-span-2" data-aos="fade-left">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-4">Who am I?</h3>
+                        <p class="text-gray-600 mb-4">
+                            I'm a passionate Java Developer with hands-on experience in backend systems, microservices architecture, and cloud-native deployments. Known for writing clean, maintainable code and contributing in Agile, team-oriented environments. I aim to solve real-world problems using scalable backend solutions.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Soft Skills</h3>
+                        <div class="flex flex-wrap">
+                            <div class="badge badge-primary" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fas fa-puzzle-piece mr-2"></i> Problem-solving
                             </div>
-                            <div class="flex items-start">
-                                <div class="text-blue-400 mr-3">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <p>Built systems handling 5,000+ transactions per minute</p>
+                            <div class="badge badge-secondary" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fas fa-comments mr-2"></i> Communication
                             </div>
-                            <div class="flex items-start">
-                                <div class="text-blue-400 mr-3">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <p>Improved system reliability by 30%</p>
+                            <div class="badge badge-tertiary" data-aos="zoom-in" data-aos-delay="300">
+                                <i class="fas fa-users mr-2"></i> Team Collaboration
                             </div>
-                            <div class="flex items-start">
-                                <div class="text-blue-400 mr-3">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <p>Passionate about clean code and best practices</p>
+                            <div class="badge badge-primary" data-aos="zoom-in" data-aos-delay="400">
+                                <i class="fas fa-search mr-2"></i> Attention to Detail
                             </div>
+                            <div class="badge badge-secondary" data-aos="zoom-in" data-aos-delay="500">
+                                <i class="fas fa-clock mr-2"></i> Time Management
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="card p-4 text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stats-counter" id="counter-projects">3+</div>
+                            <div class="text-sm text-gray-500 font-mono">PROJECTS</div>
+                        </div>
+                        <div class="card p-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stats-counter" id="counter-experience">6+</div>
+                            <div class="text-sm text-gray-500 font-mono">MONTHS EXPERIENCE</div>
+                        </div>
+                        <div class="card p-4 text-center" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stats-counter" id="counter-certifications">3+</div>
+                            <div class="text-sm text-gray-500 font-mono">CERTIFICATIONS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 section-alt">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-12" data-aos="fade-right">Work Experience</h2>
+            
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <h3 class="text-xl font-bold text-accent">Java Developer Intern</h3>
+                            <div class="font-mono text-sm text-gray-500">Sep 2024 – Nov 2024</div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-building mr-2 text-accent2"></i>
+                            <span class="font-medium">HulkHire Technologies, Hyderabad</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+                            <li>Developed PayPal Payment Integration for e-commerce using microservices.</li>
+                            <li>Improved throughput by 50% (5000+ transactions/minute) with zero lag.</li>
+                            <li>Used stream processing for real-time reconciliation, reducing failure rates by 30%.</li>
+                            <li>Deployed infrastructure on AWS (EC2, RDS, Secret Manager).</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <div class="skill-tag">Java</div>
+                            <div class="skill-tag">Spring Boot</div>
+                            <div class="skill-tag">AWS</div>
+                            <div class="skill-tag">Microservices</div>
+                            <div class="skill-tag">OAuth 2.0</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-container right" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <h3 class="text-xl font-bold text-accent">Backend Developer Intern</h3>
+                            <div class="font-mono text-sm text-gray-500">Jun 2024 – Aug 2024</div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-building mr-2 text-accent2"></i>
+                            <span class="font-medium">Innobytes Solutions (Remote)</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+                            <li>Developed Quiz Attempt Service using microservices architecture.</li>
+                            <li>Built scalable REST APIs with Spring Boot, ModelMapper, and JPA.</li>
+                            <li>Secured data with OAuth 2.0 and HMAC SHA-256, and used Gson for JSON transformation.</li>
+                            <li>Scored user attempts in real-time for 2000+ users.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <div class="skill-tag">Java</div>
+                            <div class="skill-tag">Spring Boot</div>
+                            <div class="skill-tag">REST APIs</div>
+                            <div class="skill-tag">JPA</div>
+                            <div class="skill-tag">OAuth 2.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-12" data-aos="fade-right">Projects</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-content">
+                        <div class="flex justify-center mb-6">
+                            <div class="project-icon glow">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">Food Delivery Application</h3>
+                        <p class="text-gray-600 mb-6 text-center">
+                            A backend REST API for a food delivery service with role-based access.
+                        </p>
+                        <div class="mb-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="text-sm text-accent">
+                                    <i class="fas fa-utensil-spoon mr-1"></i> 1200+ daily orders
+                                </div>
+                                <div class="text-sm text-accent2">
+                                    <i class="fas fa-tachometer-alt mr-1"></i> 45% latency reduction
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="text-sm text-accent3">
+                                    <i class="fas fa-store mr-1"></i> 500+ restaurants
+                                </div>
+                                <div class="text-sm text-accent">
+                                    <i class="fas fa-vial mr-1"></i> 98% test coverage
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <div class="skill-tag">Java</div>
+                                <div class="skill-tag">Spring Boot</div>
+                                <div class="skill-tag">MySQL</div>
+                                <div class="skill-tag">JDBC</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-accent hover:text-accent2 transition-colors flex items-center">
+                                <span class="mr-2">View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card-content">
+                        <div class="flex justify-center mb-6">
+                            <div class="project-icon glow-green">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">Quiz Attempt Service</h3>
+                        <p class="text-gray-600 mb-6 text-center">
+                            A microservice handling quiz logic, user scoring, and result generation.
+                        </p>
+                        <div class="mb-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="text-sm text-accent">
+                                    <i class="fas fa-users mr-1"></i> 2000+ users
+                                </div>
+                                <div class="text-sm text-accent2">
+                                    <i class="fas fa-shield-alt mr-1"></i> OAuth 2.0 secured
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="text-sm text-accent3">
+                                    <i class="fas fa-layer-group mr-1"></i> DTO architecture
+                                </div>
+                                <div class="text-sm text-accent">
+                                    <i class="fas fa-bolt mr-1"></i> Real-time scoring
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <div class="skill-tag">Spring Boot</div>
+                                <div class="skill-tag">ModelMapper</div>
+                                <div class="skill-tag">JPA</div>
+                                <div class="skill-tag">OAuth 2.0</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-accent2 hover:text-accent transition-colors flex items-center">
+                                <span class="mr-2">View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-gray-500 hover:text-accent2 transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card-content">
+                        <div class="flex justify-center mb-6">
+                            <div class="project-icon glow-indigo">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">User Management Service</h3>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Secure microservice to manage user profiles with advanced encryption.
+                        </p>
+                        <div class="mb-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="text-sm text-accent">
+                                    <i class="fas fa-lock mr-1"></i> HMAC encryption
+                                </div>
+                                <div class="text-sm text-accent2">
+                                    <i class="fas fa-cloud mr-1"></i> Cloud-native
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="text-sm text-accent3">
+                                    <i class="fas fa-microchip mr-1"></i> Microservices
+                                </div>
+                                <div class="text-sm text-accent">
+                                    <i class="fas fa-key mr-1"></i> OAuth 2.0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <div class="skill-tag">Spring Boot</div>
+                                <div class="skill-tag">OAuth 2.0</div>
+                                <div class="skill-tag">HMAC</div>
+                                <div class="skill-tag">Microservices</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-accent3 hover:text-accent transition-colors flex items-center">
+                                <span class="mr-2">View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-gray-500 hover:text-accent3 transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -533,381 +1262,156 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-slate-800 section-fade">
+    <section id="skills" class="py-20 section-alt">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">Technical Skills</h2>
-            <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-                My expertise spans across Java backend technologies, frameworks, and cloud services that enable me to build robust and scalable server-side applications.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- Backend Languages -->
-                <div class="bg-slate-900 rounded-lg shadow-md p-6 hover:shadow-lg transition border-t-4 border-blue-600">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-blue-900/50 p-3 rounded-full mr-4">
-                            <i class="fas fa-code text-blue-400 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-white">Programming Languages</h3>
-                    </div>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">Java</span>
-                                <span class="text-gray-300">95%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">SQL</span>
-                                <span class="text-gray-300">90%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">JSON</span>
-                                <span class="text-gray-300">85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Frameworks -->
-                <div class="bg-slate-900 rounded-lg shadow-md p-6 hover:shadow-lg transition border-t-4 border-blue-600">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-blue-900/50 p-3 rounded-full mr-4">
-                            <i class="fas fa-layer-group text-blue-400 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-white">Frameworks & Tools</h3>
-                    </div>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">Spring Boot</span>
-                                <span class="text-gray-300">95%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">Spring Framework</span>
-                                <span class="text-gray-300">90%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">REST APIs</span>
-                                <span class="text-gray-300">95%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">Maven</span>
-                                <span class="text-gray-300">85%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium text-gray-300">JUnit</span>
-                                <span class="text-gray-300">80%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill progress-glow" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- DevOps & Tools -->
-                <div class="bg-slate-900 rounded-lg shadow-md p-6 hover:shadow-lg transition border-t-4 border-blue-600">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-blue-900/50 p-3 rounded-full mr-4">
-                            <i class="fas fa-tools text-blue-400 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-white">DevOps & Cloud</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">AWS EC2</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">AWS RDS</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">AWS IAM</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">AWS Secret Manager</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">Git</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">GitHub</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">Bitbucket</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">SourceTree</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">Kafka</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">OAuth 2.0</span>
-                        <span class="skill-pill px-3 py-2 rounded-md text-sm border border-slate-700 text-gray-300">HMAC SHA-256</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Development Tools -->
-            <h3 class="text-2xl font-semibold text-center mb-8 text-white">Development Environment</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-4xl mx-auto">
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                  <div class="bg-red-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                    <i class="fab fa-java text-2xl text-red-400"></i>
-                  </div>
-                  <span class="font-medium text-sm text-gray-300">Java</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                    <div class="bg-green-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                        <i class="fas fa-leaf text-2xl text-green-400"></i>
-                    </div>
-                    <span class="font-medium text-sm text-gray-300">Spring</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                  <div class="bg-emerald-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                    <i class="fas fa-leaf text-2xl text-emerald-400"></i>
-                  </div>
-                  <span class="font-medium text-sm text-gray-300">Spring Boot</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                  <div class="bg-yellow-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                    <i class="fas fa-project-diagram text-2xl text-yellow-400"></i>
-                  </div>
-                  <span class="font-medium text-sm text-gray-300">Microservices</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                  <div class="bg-green-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                    <i class="fas fa-plug text-2xl text-green-400"></i>
-                  </div>
-                  <span class="font-medium text-sm text-gray-300">REST APIs</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                    <div class="bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                        <i class="fas fa-database text-2xl text-blue-400"></i>
-                    </div>
-                    <span class="font-medium text-sm text-gray-300">MySQL</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                    <div class="bg-purple-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                        <i class="fas fa-code-branch text-2xl text-purple-400"></i>
-                    </div>
-                    <span class="font-medium text-sm text-gray-300">Git</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                    <div class="bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                        <i class="fas fa-cloud text-2xl text-blue-400"></i>
-                    </div>
-                    <span class="font-medium text-sm text-gray-300">AWS</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                    <div class="bg-red-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                        <i class="fas fa-project-diagram text-2xl text-red-400"></i>
-                    </div>
-                    <span class="font-medium text-sm text-gray-300">Kafka</span>
-                </div>
-                <div class="tech-icon flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition border border-slate-700">
-                  <div class="bg-yellow-700/30 w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                    <i class="fab fa-python text-2xl text-yellow-300"></i>
-                  </div>
-                  <span class="font-medium text-sm text-gray-300">Python</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-slate-900 section-fade">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">Featured Projects</h2>
-            <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-                Here are some of the backend projects I've worked on, showcasing my expertise in Java development.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card rounded-lg shadow-md overflow-hidden transition duration-300">
-                    <div class="bg-slate-800 p-6 text-white">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-semibold">PayPal Payment Integration</h3>
-                            <div class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Professional</div>
-                        </div>
-                        <div class="code-block text-sm h-32 overflow-hidden">
-                            <pre><span class="code-comment">// Payment Service</span>
-<span class="code-keyword">@Service</span>
-<span class="code-keyword">public class</span> <span class="code-function">PaymentService</span> {
-    
-    <span class="code-keyword">public</span> PaymentResponse <span class="code-function">processPayment</span>(
-        PaymentRequest request) {
-        <span class="code-comment">// Process payment logic</span>
-    }
-}</pre>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-slate-900">
-                        <p class="text-gray-300 mb-4">A robust real-time payment processing system for an e-commerce platform, integrating microservices for seamless transaction flow with PayPal.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Java</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Spring Boot</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Microservices</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">AWS</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-blue-400 hover:text-blue-300 transition">
-                                <i class="fas fa-external-link-alt mr-1"></i> Case Study
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card rounded-lg shadow-md overflow-hidden transition duration-300">
-                    <div class="bg-slate-800 p-6 text-white">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-semibold">Quiz Application</h3>
-                            <div class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Personal</div>
-                        </div>
-                        <div class="code-block text-sm h-32 overflow-hidden">
-                            <pre><span class="code-keyword">@RestController</span>
-<span class="code-keyword">@RequestMapping</span>(<span class="code-string">"/api/quizzes"</span>)
-<span class="code-keyword">public class</span> <span class="code-function">QuizController</span> {
-
-    <span class="code-keyword">@GetMapping</span>(<span class="code-string">"/{id}"</span>)
-    <span class="code-keyword">public</span> ResponseEntity&lt;QuizDTO&gt; <span class="code-function">getQuiz</span>(
-        <span class="code-keyword">@PathVariable</span> Long id) {
-        <span class="code-comment">// Get quiz logic</span>
-    }
-}</pre>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-slate-900">
-                        <p class="text-gray-300 mb-4">A modular Quiz Management Service using Java, Spring Boot, and MySQL, enabling seamless user registration, quiz attempts, and result tracking for 1,000+ users.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Java</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Spring Boot</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Microservices</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">OAuth 2.0</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                                <i class="fab fa-github mr-1"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card rounded-lg shadow-md overflow-hidden transition duration-300">
-                    <div class="bg-slate-800 p-6 text-white">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-semibold">Food Delivery App</h3>
-                            <div class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Personal</div>
-                        </div>
-                        <div class="code-block text-sm h-32 overflow-hidden">
-                            <pre><span class="code-keyword">@Entity</span>
-<span class="code-keyword">@Table</span>(<span class="code-string">name</span> = <span class="code-string">"orders"</span>)
-<span class="code-keyword">public class</span> <span class="code-function">Order</span> {
-    
-    <span class="code-keyword">@Id</span>
-    <span class="code-keyword">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)
-    <span class="code-keyword">private</span> Long id;
-    
-    <span class="code-comment">// Order properties</span>
-}</pre>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-slate-900">
-                        <p class="text-gray-300 mb-4">Food delivery application using Java and Spring Boot, supporting 500+ restaurants and processing 1,200+ daily orders with optimized database performance.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Java</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Spring Boot</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">MySQL</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">JDBC</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                                <i class="fab fa-github mr-1"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="https://github.com/SHAIKAMEERr" target="_blank" class="custom-btn inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition">
-                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-slate-800 section-fade">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">Work Experience</h2>
-            <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-                My professional journey as a Java backend developer.
-            </p>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Experience 1 -->
-                <div class="timeline-item pl-12 pb-12">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-slate-900 p-6 rounded-lg shadow-md hover:shadow-lg transition border border-slate-700">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+            <h2 class="section-title text-3xl font-bold mb-12" data-aos="fade-right">Skills & Tools</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div data-aos="fade-up">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-code text-accent mr-3"></i> Languages
+                        </h3>
+                        <div class="space-y-4">
                             <div>
-                                <h3 class="text-xl font-semibold text-white">Java Developer Intern</h3>
-                                <p class="text-blue-400 font-medium">HulkHire Tech, Hyderabad</p>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">Java</span>
+                                    <span class="text-accent">90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
                             </div>
-                            <div class="mt-2 md:mt-0 bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-sm inline-block">
-                                Sep 2024 - Nov 2024
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">MySQL</span>
+                                    <span class="text-accent">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">JSON</span>
+                                    <span class="text-accent">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">Python</span>
+                                    <span class="text-accent">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <div class="terminal text-sm">
-                                <div class="terminal-header">
-                                    <div class="terminal-button terminal-red"></div>
-                                    <div class="terminal-button terminal-yellow"></div>
-                                    <div class="terminal-button terminal-green"></div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-layer-group text-accent mr-3"></i> Frameworks
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">Spring Boot</span>
+                                    <span class="text-accent">85%</span>
                                 </div>
-                                <div>
-                                    <span class="terminal-prompt">$ </span>
-                                    <span class="terminal-command">cat achievements.txt</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
                                 </div>
-                                <div class="terminal-output">
-                                    > Architected a robust real-time payment processing system<br>
-                                    > Increased system throughput by 50%, handling 5,000+ transactions per minute<br>
-                                    > Designed scalable event-driven architecture for PayPal Payment Integration<br>
-                                    > Implemented stream processing for real-time payment monitoring<br>
-                                    > Improved system reliability by 30% through optimized transaction reconciliation
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">REST API</span>
+                                    <span class="text-accent">90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">Maven</span>
+                                    <span class="text-accent">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">Microservices</span>
+                                    <span class="text-accent">75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Java</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Spring Boot</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Microservices</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Rest APIs</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">AWS EC2</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">AWS RDS</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">AWS Secret Manager</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">OAuth 2.0</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Agile Scrum</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">MySQL</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">HMAC SHA-256</span>
-                            <span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded text-xs">Postman APIs</span>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-cloud text-accent mr-3"></i> Cloud & Security
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">AWS (IAM, EC2, RDS, S3)</span>
+                                    <span class="text-accent">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">OAuth 2.0</span>
+                                    <span class="text-accent">75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-mono">HMAC SHA-256</span>
+                                    <span class="text-accent">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-tools text-accent mr-3"></i> Tools & Testing
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="skill-tag">Git</div>
+                            <div class="skill-tag">GitHub</div>
+                            <div class="skill-tag">Bitbucket</div>
+                            <div class="skill-tag">SourceTree</div>
+                            <div class="skill-tag">IntelliJ</div>
+                            <div class="skill-tag">Eclipse</div>
+                            <div class="skill-tag">Postman</div>
+                            <div class="skill-tag">Jira</div>
+                            <div class="skill-tag">JUnit</div>
+                            <div class="skill-tag">API Testing</div>
+                            <div class="skill-tag">GitHub Actions</div>
                         </div>
                     </div>
                 </div>
@@ -915,88 +1419,83 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-slate-900 section-fade">
+    <!-- Education & Certifications Section -->
+    <section id="education" class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">Education & Certifications</h2>
-            <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-                My academic background and professional certifications in computer science and Java development.
-            </p>
+            <h2 class="section-title text-3xl font-bold mb-12" data-aos="fade-right">Education & Certifications</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Education 1 -->
-                <div class="bg-slate-800 rounded-lg shadow-md p-6 border-l-4 border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-blue-900/30 p-3 rounded-full mr-4">
-                            <i class="fas fa-graduation-cap text-blue-400 text-xl"></i>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-accent mr-3"></i> Education
+                    </h3>
+                    
+                    <div class="card p-6 mb-6">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="text-xl font-bold text-accent">MCA</h4>
+                            <div class="font-mono text-sm text-gray-500">2023</div>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Master of Computer Applications</h3>
-                            <p class="text-gray-300">CGPA 8.23</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-university mr-2 text-accent2"></i>
+                            <span class="font-medium">Madanapalle Institute of Technology & Science</span>
                         </div>
-                    </div>
-                    <h4 class="text-lg text-blue-400 mb-2">Madanapalle Institute of Technology & Science</h4>
-                    <p class="text-gray-300 mb-3">Dec 2021 - Aug 2023</p>
-                    <p class="text-gray-300 mb-4">
-                        Advanced studies in computer applications with focus on software development, database management, and enterprise systems.
-                    </p>
-                </div>
-                
-                <!-- Education 2 -->
-                <div class="bg-slate-800 rounded-lg shadow-md p-6 border-l-4 border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-blue-900/30 p-3 rounded-full mr-4">
-                            <i class="fas fa-graduation-cap text-blue-400 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Bachelor of Computer Applications</h3>
-                            <p class="text-gray-300">CGPA 7.71</p>
-                        </div>
-                    </div>
-                    <h4 class="text-lg text-blue-400 mb-2">Shri Gnanambica Degree College</h4>
-                    <p class="text-gray-300 mb-3">Jun 2018 - Aug 2021</p>
-                    <p class="text-gray-300 mb-4">
-                        Foundation in computer science, programming fundamentals, and software development principles.
-                    </p>
-                </div>
-                
-                <!-- Certifications -->
-                <div class="md:col-span-2 bg-slate-800 rounded-lg shadow-md p-6 border-l-4 border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-start mb-6">
-                        <div class="bg-blue-900/30 p-3 rounded-full mr-4">
-                            <i class="fas fa-certificate text-blue-400 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Professional Certifications</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star mr-2 text-accent3"></i>
+                            <span>CGPA: 8.23</span>
                         </div>
                     </div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="p-4 bg-slate-900 rounded-lg border border-slate-700">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-stream text-blue-400 mr-2"></i>
-                                <h4 class="font-medium text-white">Kafka & Zookeeper</h4>
-                            </div>
-                            <p class="text-gray-300">SCALER</p>
-                            <p class="text-gray-400 text-sm mt-1">Issued: January 2025</p>
+                    <div class="card p-6">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="text-xl font-bold text-accent">BCA</h4>
+                            <div class="font-mono text-sm text-gray-500">2021</div>
                         </div>
-                        
-                        <div class="p-4 bg-slate-900 rounded-lg border border-slate-700">
-                            <div class="flex items-center mb-2">
-                                <i class="fab fa-java text-blue-400 mr-2"></i>
-                                <h4 class="font-medium text-white">JAVA Programming - Beginner to Master</h4>
-                            </div>
-                            <p class="text-gray-300">Udemy</p>
-                            <p class="text-gray-400 text-sm mt-1">Issued: November 2024</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-university mr-2 text-accent2"></i>
+                            <span class="font-medium">Shri Gnanambica Degree College</span>
                         </div>
-                        
-                        <div class="p-4 bg-slate-900 rounded-lg border border-slate-700">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-leaf text-blue-400 mr-2"></i>
-                                <h4 class="font-medium text-white">Spring Boot For Beginners</h4>
-                            </div>
-                            <p class="text-gray-300">Amigoscode</p>
-                            <p class="text-gray-400 text-sm mt-1">Issued: September 2024</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-star mr-2 text-accent3"></i>
+                            <span>CGPA: 7.71</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-certificate text-accent mr-3"></i> Certifications
+                    </h3>
+                    
+                    <div class="card p-6 mb-6">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="text-xl font-bold text-accent">Kafka & Zookeeper</h4>
+                            <div class="font-mono text-sm text-gray-500">Jan 2025</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-award mr-2 text-accent2"></i>
+                            <span class="font-medium">Scaler</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 mb-6">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="text-xl font-bold text-accent">Java Beginner to Master</h4>
+                            <div class="font-mono text-sm text-gray-500">Nov 2024</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-award mr-2 text-accent2"></i>
+                            <span class="font-medium">Udemy</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="text-xl font-bold text-accent">Spring Boot for Beginners</h4>
+                            <div class="font-mono text-sm text-gray-500">Sep 2024</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-award mr-2 text-accent2"></i>
+                            <span class="font-medium">Amigoscode</span>
                         </div>
                     </div>
                 </div>
@@ -1005,268 +1504,421 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-800 section-fade">
+    <section id="contact" class="py-20 section-alt">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">Get In Touch</h2>
-            <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-                Interested in working together? Feel free to contact me for any project or collaboration opportunities.
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
-                <div class="md:w-1/2">
-                    <div class="bg-slate-900 rounded-lg shadow-md p-6 border border-slate-700">
-                        <h3 class="text-xl font-semibold mb-6 flex items-center text-white">
-                            <i class="fas fa-paper-plane text-blue-400 mr-2"></i> Contact Information
-                        </h3>
-                        
+            <h2 class="section-title text-3xl font-bold mb-12" data-aos="fade-right">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="bg-blue-900/30 p-3 rounded-full mr-4">
-                                    <i class="fas fa-envelope text-blue-400"></i>
+                                <div class="text-accent text-xl mr-4">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <p class="text-gray-400 text-sm">Email</p>
-                                    <p class="text-gray-200 font-medium">shaikameerjann@gmail.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-blue-900/30 p-3 rounded-full mr-4">
-                                    <i class="fas fa-phone text-blue-400"></i>
-                                </div>
-                                <div>
-                                    <p class="text-gray-400 text-sm">Phone</p>
-                                    <p class="text-gray-200 font-medium">+91 7075850587</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-blue-900/30 p-3 rounded-full mr-4">
-                                    <i class="fas fa-map-marker-alt text-blue-400"></i>
-                                </div>
-                                <div>
-                                    <p class="text-gray-400 text-sm">Location</p>
-                                    <p class="text-gray-200 font-medium">Bangalore, India</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8">
-                            <div class="terminal">
-                                <div class="terminal-header">
-                                    <div class="terminal-button terminal-red"></div>
-                                    <div class="terminal-button terminal-yellow"></div>
-                                    <div class="terminal-button terminal-green"></div>
-                                </div>
-                                <div>
-                                    <span class="terminal-prompt">$ </span>
-                                    <span class="terminal-command">connect --with social</span>
-                                </div>
-                                <div class="terminal-output flex space-x-4 mt-4">
-                                    <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                                        <i class="fab fa-github text-xl"></i>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <a href="mailto:shaikameerjann@gmail.com" class="text-gray-600 hover:text-accent transition-colors">
+                                        shaikameerjann@gmail.com
                                     </a>
-                                    <a href="https://linkedin.com/in/ameer-shaikk/" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                                        <i class="fab fa-linkedin-in text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-accent text-xl mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Phone</h4>
+                                    <a href="tel:+917075850587" class="text-gray-600 hover:text-accent transition-colors">
+                                        +91 70758 50587
                                     </a>
-                                    <a href="https://leetcode.com/u/SHAIK_AMEER_/" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                                          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-6 h-6 inline-block" />
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-accent text-xl mr-4">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/ameer-shaikk/" target="_blank" class="text-gray-600 hover:text-accent transition-colors">
+                                        linkedin.com/in/ameer-shaikk
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-accent text-xl mr-4">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">GitHub</h4>
+                                    <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-gray-600 hover:text-accent transition-colors">
+                                        github.com/SHAIKAMEERr
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-accent text-xl mr-4">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">LeetCode</h4>
+                                    <a href="https://leetcode.com/u/SHAIKAMEER/" target="_blank" class="text-gray-600 hover:text-accent transition-colors">
+                                        leetcode.com/u/SHAIKAMEER
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="md:w-1/2">
-                    <div class="bg-slate-900 rounded-lg shadow-md p-6 border border-slate-700">
-                        <h3 class="text-xl font-semibold mb-6 flex items-center text-white">
-                            <i class="fas fa-code text-blue-400 mr-2"></i> Send Me a Message
-                        </h3>
-                        
-                        <form id="contact-form" class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-gray-300 mb-1 font-medium">Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Your Name">
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-gray-300 mb-1 font-medium">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Your Email">
-                            </div>
-                            
-                            <div>
-                                <label for="subject" class="block text-gray-300 mb-1 font-medium">Subject</label>
-                                <input type="text" id="subject" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Subject">
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-gray-300 mb-1 font-medium">Message</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Your Message"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="custom-btn w-full bg-blue-600 text-white py-3 rounded-md font-medium hover:bg-blue-700 transition flex items-center justify-center">
-                                <i class="fas fa-paper-plane mr-2"></i> Send Message
-                            </button>
-                        </form>
-                        
-                        <div id="form-message" class="mt-4 text-center hidden"></div>
-                    </div>
+                <div data-aos="fade-left">
+                    <form class="card p-6">
+                        <h3 class="text-xl font-bold mb-6">Send Me a Message</h3>
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Your Email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-input" placeholder="Subject">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-input" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+    <footer class="py-8 bg-opacity-50">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h2 class="text-2xl font-bold font-mono">&lt;Shaik<span class="text-blue-400">Ameer</span>/&gt;</h2>
-                    <p class="text-gray-400 mt-2">Java Backend Developer</p>
-                </div>
-                
-                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
-                    <a href="#about" class="text-gray-300 hover:text-blue-400 transition">About</a>
-                    <a href="#skills" class="text-gray-300 hover:text-blue-400 transition">Skills</a>
-                    <a href="#projects" class="text-gray-300 hover:text-blue-400 transition">Projects</a>
-                    <a href="#experience" class="text-gray-300 hover:text-blue-400 transition">Experience</a>
-                    <a href="#education" class="text-gray-300 hover:text-blue-400 transition">Education</a>
-                    <a href="#contact" class="text-gray-300 hover:text-blue-400 transition">Contact</a>
-                </div>
-                
-                <div class="flex space-x-4">
-                    <a href="https://github.com/SHAIKAMEERr" target="_blank" class="text-gray-300 hover:text-blue-400 transition">
-                        <i class="fab fa-github"></i>
+                <div class="mb-4 md:mb-0">
+                    <a href="#home" class="text-xl font-bold">
+                        <span class="text-accent">&lt;</span>
+                        SHAIK<span class="text-accent2">AMEERJAN</span>
+                        <span class="text-accent">/&gt;</span>
                     </a>
-                    <a href="https://linkedin.com/in/ameer-shaikk/" target="_blank" class="text-gray-300 hover:text-blue-400 transition">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://leetcode.com/u/SHAIK_AMEER_/" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                                          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-6 h-6 inline-block" />
-                                    </a>
                 </div>
-            </div>
-            
-            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-gray-400">
-                <p class="mb-2">&copy; 2023 Shaik Ameerjan. All rights reserved.</p>
-                <p class="text-sm font-mono">
-                    <span class="text-blue-400">public</span> <span class="text-green-400">String</span> <span class="text-white">madeWith</span>() {<span class="text-orange-400"> return "passion + code + coffee";</span> }
-                </p>
+                <div class="text-gray-500 text-sm">
+                    &copy; 2025 Ameer Shaik. All rights reserved.
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 glow">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
             });
-        });
-        
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            // Loading Animation
+            const loader = document.getElementById('loader');
+            const loaderProgress = document.getElementById('loader-progress');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loader.style.opacity = '0';
+                        setTimeout(() => {
+                            loader.style.display = 'none';
+                        }, 500);
+                    }, 500);
+                }
+                loaderProgress.style.width = `${progress}%`;
+            }, 200);
             
-            // Simple validation
-            if (!name || !email || !message) {
-                formMessage.textContent = 'Please fill in all required fields.';
-                formMessage.classList.remove('hidden', 'text-green-500');
-                formMessage.classList.add('text-red-500');
-                return;
+            // Initialize Particles.js
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#3b82f6"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#3b82f6",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+            
+            // Floating Tech Icons
+            const floatingIcons = document.getElementById('floating-icons');
+            const icons = [
+                'fa-java',
+                'fa-database',
+                'fa-code',
+                'fa-cloud',
+                'fa-server',
+                'fa-cogs',
+                'fa-shield-alt',
+                'fa-microchip',
+                'fa-layer-group',
+                'fa-sitemap'
+            ];
+            
+            for (let i = 0; i < 15; i++) {
+                const icon = document.createElement('i');
+                icon.className = `fas ${icons[Math.floor(Math.random() * icons.length)]} floating-icon`;
+                icon.style.left = `${Math.random() * 100}%`;
+                icon.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                icon.style.animationDelay = `${Math.random() * 5}s`;
+                icon.style.fontSize = `${Math.random() * 20 + 10}px`;
+                floatingIcons.appendChild(icon);
             }
             
-            // In a real application, you would send this data to a server
-            // For this demo, we'll just show a success message
-            formMessage.textContent = 'Thank you! Your message has been sent.';
-            formMessage.classList.remove('hidden', 'text-red-500');
-            formMessage.classList.add('text-green-500');
+            // Mobile Menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
             
-            // Reset form
-            contactForm.reset();
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
             
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 5000);
-        });
-        
-        // Scroll reveal animation
-        const revealSections = () => {
-            const sections = document.querySelectorAll('.section-fade');
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
             
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
+            mobileMenuOverlay.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Mobile Menu Links
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Active Navigation Link
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
                 
-                if (sectionTop < windowHeight - 100) {
-                    section.classList.add('visible');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('opacity-100');
+                    backToTopBtn.classList.remove('invisible');
+                } else {
+                    backToTopBtn.classList.remove('opacity-100');
+                    backToTopBtn.classList.add('invisible');
                 }
             });
-        };
-        
-        // Run on page load
-        revealSections();
-        
-        // Run on scroll
-        window.addEventListener('scroll', revealSections);
-        
-        // Animate progress bars on scroll
-        const animateProgressBars = () => {
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Form Submission
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you for your message! I will get back to you soon.');
+                });
+            }
+            
+            // Counter Animation
+            function animateCounter(elementId, target) {
+                const element = document.getElementById(elementId);
+                let current = 0;
+                const increment = target / 40;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current) + '+';
+                }, 50);
+            }
+            
+            // Intersection Observer for counters
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter('counter-projects', 3);
+                        animateCounter('counter-experience', 6);
+                        animateCounter('counter-certifications', 3);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.querySelector('#about');
+            if (statsSection) {
+                counterObserver.observe(statsSection);
+            }
+            
+            // Progress Bar Animation
             const progressBars = document.querySelectorAll('.progress-fill');
+            const progressObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0%';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                        progressObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
             
             progressBars.forEach(bar => {
-                const barTop = bar.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (barTop < windowHeight - 50) {
-                    const width = bar.getAttribute('style').match(/width: (\d+)%/)[1];
-                    bar.style.width = '0%';
-                    setTimeout(() => {
-                        bar.style.width = width + '%';
-                    }, 100);
-                }
+                progressObserver.observe(bar);
             });
-        };
-        
-        // Run on scroll for progress bars
-        window.addEventListener('scroll', animateProgressBars);
-        
-        // Run once on page load
-        setTimeout(animateProgressBars, 500);
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9421a4eac7338549',t:'MTc0NzYzNzI2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9651dd05b23c3fc0',t:'MTc1MzUxMTU4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
