@@ -77,8 +77,4 @@ $RECYCLE.BIN/
 .firebase/
 .wrangler/
 
-# ==========================================
-# OPTIONAL LOCAL DATABASE / FILES
-# ==========================================
-*.sqlite
-*.db
+
